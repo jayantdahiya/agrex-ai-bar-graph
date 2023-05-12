@@ -1,7 +1,7 @@
 import { useState, useEffect, createContext } from "react";
 import "./App.css";
 
-import ValueRange from "./components/ValueRange";
+// import ValueRange from "./components/ValueRange";
 import DateRange from "./components/DateRange";
 import BarGraph from "./components/BarGraph";
 import sampleData from "./data/data";
@@ -49,18 +49,22 @@ function App() {
               {/* <ValueRange /> */}
               <DateRange />
               <div className="text-right">
-              <button
-                className="border-2 border-green-500 bg-green-300 rounded-lg m-2 p-2 hover:bg-green-500 hover:text-white text-right"
-                onClick={() => {
-                  filterResult();
-                }}
-              >
-                Filter Result
-              </button>
+                <button
+                  className="border-2 border-green-500 bg-green-300 rounded-lg m-2 p-2 hover:bg-green-500 hover:text-white text-right"
+                  onClick={() => {
+                    filterResult();
+                  }}
+                >
+                  Filter Result
+                </button>
               </div>
             </div>
-            <div className="w-[80vw] h-[40vh] m-auto lg:w-[40vw] lg:h-[50vh] p-2">
-              <BarGraph data={filteredData} />
+            <div className="w-[80vw] h-[40vh] m-auto lg:w-[40vw] lg:h-[50vh] p-2 outline-dashed rounded-md">
+              {filteredData.length > 0 ? (
+                <BarGraph data={filteredData} />
+              ) : (
+                <p className="text-center">No data available.</p>
+              )}
             </div>
           </div>
         </AppContext.Provider>

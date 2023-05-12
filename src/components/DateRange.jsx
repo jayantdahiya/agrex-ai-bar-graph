@@ -9,9 +9,9 @@ function DateRange() {
   const { setStartDate, setEndDate, startDate, endDate } =
     useContext(AppContext);
   return (
-    <div className="flex flex-col items-center justify-between gap-2 lg:flex-row">
+    <div className="flex flex-col items-center justify-between gap-2 lg:flex-row space-y-2">
       <p className="text-2xl font-bold text-center">Date Range Filter</p>
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center m-1">
         <p className="text-lg font-thin">Start Date:</p>
         <div className="border-2 border-gray-400 rounded-md">
           <DatePicker
@@ -21,7 +21,7 @@ function DateRange() {
           />
         </div>
       </div>
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center m-1">
         <p className="text-lg font-thin">End Date: </p>
         <div className="border-2 border-gray-400 rounded-md">
           <DatePicker
